@@ -16,9 +16,9 @@
 #include "DJI_LIB/DJI_Pro_Config.h"
 #include "DJI_LIB/DJI_Pro_Rmu.h"
 
-int init_pm25(const char *device, int baudrate);
-int read_pm25(char *buf, int len);
-void close_pm25();
+//int init_pm25(const char *device, int baudrate);
+//int read_pm25(char *buf, int len);
+//void close_pm25();
 
 char buffer[1024];
 
@@ -94,11 +94,11 @@ int main()
     }
     DJI_Pro_Setup(NULL);
     
-    if(init_pm25("/dev/ttyUSB0", 2400) <0)
-    {
-        perror( "PM25 Serial Port Open ERROR" );
-        return 0;
-    }
+    //if(init_pm25("/dev/ttyUSB0", 2400) <0)
+    //{
+    //    perror( "PM25 Serial Port Open ERROR" );
+    //    return 0;
+    //}
 
     DJI_Pro_Register_Transparent_Transmission_Callback(transparent_transission_receive);
 
@@ -111,16 +111,16 @@ int main()
         if(run_flag)
         {
             int nbyte;
-            nbyte = read_pm25(buffer, 1024);
-            if (nbyte > 0) 
-            {
-                transparent_transission_send((uint8_t*)buffer, nbyte);
+            //nbyte = read_pm25(buffer, 1024);
+            //if (nbyte > 0) 
+            //{
+            //    transparent_transission_send((uint8_t*)buffer, nbyte);
                 //printf("%s", buffer);
-            } 
+            //} 
         }
 
         sleep(1);
 
     }
-    close_pm25();
+    //close_pm25();
 }
