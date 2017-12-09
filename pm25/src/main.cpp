@@ -46,11 +46,11 @@ activate_data_t user_act_data;
 void activation()
 {
 
-    char key_buf[65] = "input your key";   /* Input your app_key */
+    char key_buf[65] = "93d06fd31a2da2559c9977932b0817052f4f50142a68fa70e340ce5ad5803996";   /* Input your app_key */
     char app_bundle_id[32] = "1234567890";
 
-    user_act_data.app_id = id;                     /* Input your app_id */
-    user_act_data.app_api_level = level;                    /* Input your app_level */
+    user_act_data.app_id = 1039512;                     /* Input your app_id */
+    user_act_data.app_api_level = 2;                    /* Input your app_level */
     user_act_data.app_ver = 0x02030A00; 
     user_act_data.app_key = key_buf;  
     strcpy((char*)user_act_data.app_bundle_id, app_bundle_id);
