@@ -65,7 +65,7 @@ void transparent_transission_receive(unsigned char *buf,unsigned char len)
     unsigned char cmd;
     cmd = buf[0];
 
-   // printf("[recv_data],send len %d data %s\n", len, buf);
+    printf("[recv_data],send len %d data %s\n", len, buf);
 
     switch(cmd)
     {
